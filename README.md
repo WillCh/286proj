@@ -11,8 +11,10 @@ These phases will likely overlap and have feedback loops.  That's OK.
 
 We envision three basic components:
   1. A *metadata repository* that (a) has a schema to capture relevant information from a set of prototypical tasks and tools, (b) is extensible to new tasks and tools with varying degrees of opacity, and (c) can scale up to large volumes of metadata and high access rates.
-  2. A *crawler* that can walk large repositories of information, and call out to an extensible set of external data "recognizers" or "profilers" that can assess the contents of individual data files or sets.  Candidate repositories include HDFS, POSIX filesystems, and relational databases (via standards like JDBC).  The crawler should interface with a standard scheduling infrastructure so it can execute crawls periodically, and drive the crawls at a load-sensitive pace.
-  3. A *metadata mover* facility that provides (a) an API for inserting metadata into the repository, (b) a facility for reliable bulk movement of large volumes data into the repository, and (c) an interface to the same scheduling infrastructure as the crawler for executing bulk metadata movement.
+  2. A *crawler* that can walk large repositories of information, and call out to an extensible set of external data "recognizers" or "profilers" that can assess the contents of individual data files or sets.  Candidate datastores include HDFS, POSIX filesystems, and relational databases (via standards like JDBC), and perhaps some special file types like iPython notebooks.  The crawler should interface with a standard scheduling infrastructure at two levels
+    1. macro: fire off crawls on a schedule (nightly, weekly, etc)
+    2. micro: execute the crawl through the scheduler: i.e. visit files and feed them up for REST calls at a load-sensitive pace.
+  3. A *metadata mover* facility that provides (a) an API for inserting metadata into the repository, (b) a facility for reliable bulk movement of large volumes data into the repository, and (c) an interface to the same scheduling infrastructure as the crawler for executing bulk metadata movement
 
 The goal here is not to write everything from scratch, but rather to use and augment well-supported open source components.  Potentially useful components include:
   - [Gobblin](https://github.com/linkedin/gobblin). This is an excellent starting point for the crawler and metadata mover projects.
