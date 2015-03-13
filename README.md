@@ -20,7 +20,6 @@ The goal here is not to write everything from scratch, but rather to use and aug
   - [Gobblin](https://github.com/linkedin/gobblin). This is an excellent starting point for the crawler and metadata mover projects.
   - A variety of open-source databases could be used for the metadata repository.  We will have to decide very early on whether we want to use a relational database or a key-value store.  A concern with relational databases is that there isn't currently a well-used scale-out (parallel/distributed) relational database in the typical Apache Big Data environment
   - [Kafka](https://github.com/apache/kafka) is a standard open source tool for reliable bulk data movement that could be useful and will likely work well with Gobblin as both are from LinkedIn.
-  - 
 
 We will endeavor to support some real-world use cases from scientists on campus, as well as partners in industry.  On campus, we have access to experts on two important toolchains:
   - The [BDAS stack](https://amplab.cs.berkeley.edu/software/) including [Spark](http://spark.apache.org) and [MLlib](http://www.mlbase.org).
