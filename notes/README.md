@@ -1,5 +1,5 @@
 ## Rough Schedule
-  - Weeks of 3/16-30: groups form, requirements gathering, initial architecture plan
+  - Weeks of 3/16 - 30: groups form, requirements gathering, initial architecture plan
   - Weeks of 3/30 - 4/13: prototype implementation
   - Weeks of 4/13 - 4/27: complete implementation and use cases, integrate sub-projects
   - Week of 4/27: wrap up documentation, integrated demo
