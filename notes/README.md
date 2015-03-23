@@ -6,4 +6,4 @@
   - Plan for this week and break:
     - Teams to review relevant open source (Gobblin, Kafka, etc) and draft architecture for their pieces
     - Begin discussion with other groups on how the different pieces communicate
-    - See notes sent by Joe for more detail
+    - See [weekly notes](week1.md) for more detail
