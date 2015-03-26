@@ -11,7 +11,7 @@ Next steps here will be for you to meet with your teams and come up with a plan 
 
 Some thoughts per project below.  We will also meet next Tuesday.  As we get more context I can connect you guys to folks on campus, in the open source community, and in industry as needed.  But let’s get some focused questions first.
 
-In general, this is graduate work and you guys need to define the details: what do you think it interesting, and what do you plan to deliver?  I can generate lots of ideas, but you guys should scope out what’s worthwhile and what’s feasible.  Imagine you’re being graded on two axes: (1) how interesting/ambitious/useful is the project, (2) how close did you come to hitting the milestones you set for yourselves.  You have control over the tradeoff between (1) and (2), but I’d encourage you to emphasize (2) — make sure you set expectations realistically, and deliver on what you promise.
+In general, this is graduate work and you guys need to define the details: what do you think is interesting, and what do you plan to deliver?  I can generate lots of ideas, but you guys should scope out what’s worthwhile and what’s feasible.  Imagine you’re being graded on two axes: (1) how interesting/ambitious/useful is the project, (2) how close did you come to hitting the milestones you set for yourselves.  You have control over the tradeoff between (1) and (2), but I’d encourage you to emphasize (2) — make sure you set expectations realistically, and deliver on what you promise.
 
 Joe
 
@@ -19,7 +19,7 @@ Metadata Repo:
 
   1. It would be great for you guys to do some requirements gathering -- learn about the metadata that is generated from a few different use cases.  To get started, it’d be useful to look at some specific software artifacts.  I was thinking you could (a) talk to Evan Sparks in the AMPlab to find out about what metadata is generated when MLlib jobs are run (over Spark), (b) figure out what information is stored in an iPython Notebook (probably well documented, but if you need help I can route you to a local expert), and (c) talk with folks at Trifacta about what metadata is currently kept for data wrangling in their system.  Please cc me if/when you reach out to Evan, and let me know when you’re ready to talk to somebody at Trifacta and I’ll connect you.
 
-  1. For a more end-to-end use case, you could interview Frank Nothaft in the AMPLab … he can tell you about some of the computational genomics use cases he’s working on.  Again, please cc me if you reach out to him.  I would do this one after you do the others, and it’s more open-ended.
+  1. For a more end-to-end use case, you could interview Frank Nothaft in the AMPLab … he can tell you about some of the computational genomics use cases he’s working on.  Again, please cc me if you reach out to him.  I would do this one after you do the others, as it’s more open-ended.
 
   1. Have a look at the metadata repo in Gobblin (linked from the Readme.MD in our github repo) and write up some short pros/cons on its functionality relative to the use cases you’re learning about.  
 
