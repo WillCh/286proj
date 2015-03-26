@@ -3,9 +3,9 @@
 Hi all:
 Looks like you split up the tasks evenly and we can get coverage if everybody works on their first choice.  Here’s the breakdown:
 
-Metadata Repo: Feiyang, Enrico and Jimmy
-Crawler: Ian, Kyle and Eric
-Data Mover: Haoyu and Jialiang
+  - Metadata Repo: Feiyang, Enrico and Jimmy
+  - Crawler: Ian, Kyle and Eric
+  - Data Mover: Haoyu and Jialiang
 
 Next steps here will be for you to meet with your teams and come up with a plan to get an initial requirements document and plan in the next 10-14 days.  I’d like for this to live in our Github repo so I can subscribe to changes and see how you’re progressing.
 
