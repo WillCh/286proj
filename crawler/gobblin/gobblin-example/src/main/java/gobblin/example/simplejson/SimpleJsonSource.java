@@ -12,7 +12,10 @@
 package gobblin.example.simplejson;
 
 import java.io.IOException;
+import java.io.File;
+
 import java.util.List;
+import java.util.Iterator;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
@@ -25,6 +28,7 @@ import gobblin.source.extractor.Extractor;
 import gobblin.source.workunit.Extract;
 import gobblin.source.workunit.WorkUnit;
 
+import org.apache.commons.io.FileUtils;
 
 /**
  * An implementation of {@link Source} for the simple JSON example.
@@ -55,6 +59,11 @@ public class SimpleJsonSource implements Source<String, String> {
 
     String filesToPull = state.getProp(ConfigurationKeys.SOURCE_FILEBASED_FILES_TO_PULL);
     for (String file : Splitter.on(',').omitEmptyStrings().split(filesToPull)) {
+      Iterator it = FileUtils.iterateFiles(new File(file), null, true);
+      while(it.hasNext()) {
+        System.out.println("OMNOMNOMNOM " + it.next());
+      }
+      System.out.println("----END----");
       // Create one work unit for each file to pull
       WorkUnit workUnit = new WorkUnit(state, extract);
       workUnit.setProp(SOURCE_FILE_KEY, file);
