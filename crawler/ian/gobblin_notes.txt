@@ -1,0 +1,12 @@
+
+* to compile changes:
+  - run "./gradlew build"
+  - unpack gobblin-dist.tar.gz "tar -zxvf gobblin-dist.tar.gz"
+
+* command to run gobblin from gobblin-dist/:
+bin/gobblin-standalone.sh start --workdir ../test_workdir --conf ../test_config
+
+* stdout goes into nohup.out
+
+* need to import apache commons
+  - in gobblin-example/build.gradle file, add a line to compile commons-io
