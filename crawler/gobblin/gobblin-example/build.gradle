@@ -22,6 +22,7 @@ dependencies {
     compile externalDependency.slf4j
     compile externalDependency.gson
     compile externalDependency.commonsVfs
+    compile externalDependency.commonsIo //IAN
     
     testCompile externalDependency.testng
 }
