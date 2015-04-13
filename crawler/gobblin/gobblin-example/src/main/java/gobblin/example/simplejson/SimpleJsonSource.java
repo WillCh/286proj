@@ -29,6 +29,9 @@ import gobblin.source.workunit.Extract;
 import gobblin.source.workunit.WorkUnit;
 
 import org.apache.commons.io.FileUtils;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 /**
  * An implementation of {@link Source} for the simple JSON example.
@@ -61,9 +64,30 @@ public class SimpleJsonSource implements Source<String, String> {
     for (String file : Splitter.on(',').omitEmptyStrings().split(filesToPull)) {
       Iterator it = FileUtils.iterateFiles(new File(file), null, true);
       while(it.hasNext()) {
-        System.out.println("OMNOMNOMNOM " + it.next());
+	try{
+	File newFile = (File) it.next();
+	Path path = newFile.toPath();
+	
+	// Print filename and associated metadata	
+        System.out.println(path);
+	BasicFileAttributes attr = Files.readAttributes(path, BasicFileAttributes.class);
+	System.out.println("	creationTime: " + attr.creationTime());
+	System.out.println("	lastAccessTime: " + attr.lastAccessTime());
+	System.out.println("	lastModifiedTime: " + attr.lastModifiedTime());
+	System.out.println("	isDirectory: " + attr.isDirectory());
+	System.out.println("	isOther: " + attr.isOther());
+	System.out.println("	isRegularFile: " + attr.isRegularFile());
+	System.out.println("	isSymbolicLink: " + attr.isSymbolicLink());
+	System.out.println("	size: " + attr.size());	
+      	System.out.println(" ");
+    	}catch(IOException e){
+    	    e.printStackTrace();
+    	}
       }
+
+      System.out.println(" ");
       System.out.println("----END----");
+
       // Create one work unit for each file to pull
       WorkUnit workUnit = new WorkUnit(state, extract);
       workUnit.setProp(SOURCE_FILE_KEY, file);
