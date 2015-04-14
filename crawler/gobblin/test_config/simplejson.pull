@@ -12,8 +12,8 @@ extract.namespace=gobblin.example.simplejson
 
 # source configuration properties
 # comma-separated list of file URIs (supporting different schemes, e.g., file://, ftp://, sftp://, http://, etc)
-#source.filebased.files.to.pull=/home/ian/gobblin/gobblin-example/src/main/resources
-source.filebased.files.to.pull= ../test_dir/
+# NOTE: must specify exact path otherwise the job WILL NOT RUN
+source.filebased.files.to.pull= /Users/erictu/Documents/286a/cs286A/crawler/gobblin/test_dir/json
 # whether to use authentication or not (default is false)
 source.conn.use.authentication=false
 # credential for authentication purpose (optional)

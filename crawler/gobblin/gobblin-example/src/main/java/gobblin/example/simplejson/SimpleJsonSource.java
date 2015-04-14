@@ -64,34 +64,35 @@ public class SimpleJsonSource implements Source<String, String> {
     for (String file : Splitter.on(',').omitEmptyStrings().split(filesToPull)) {
       Iterator it = FileUtils.iterateFiles(new File(file), null, true);
       while(it.hasNext()) {
-	try{
-	File newFile = (File) it.next();
-	Path path = newFile.toPath();
-	
-	// Print filename and associated metadata	
-        System.out.println(path);
-	BasicFileAttributes attr = Files.readAttributes(path, BasicFileAttributes.class);
-	System.out.println("	creationTime: " + attr.creationTime());
-	System.out.println("	lastAccessTime: " + attr.lastAccessTime());
-	System.out.println("	lastModifiedTime: " + attr.lastModifiedTime());
-	System.out.println("	isDirectory: " + attr.isDirectory());
-	System.out.println("	isOther: " + attr.isOther());
-	System.out.println("	isRegularFile: " + attr.isRegularFile());
-	System.out.println("	isSymbolicLink: " + attr.isSymbolicLink());
-	System.out.println("	size: " + attr.size());	
-      	System.out.println(" ");
-    	}catch(IOException e){
-    	    e.printStackTrace();
-    	}
-      }
+        try{
+          File newFile = (File) it.next();
+          Path path = newFile.toPath();
+          // Print filename and associated metadata 
+          System.out.println(path);
+          BasicFileAttributes attr = Files.readAttributes(path, BasicFileAttributes.class);
+          System.out.println("  creationTime: " + attr.creationTime());
+          System.out.println("  lastAccessTime: " + attr.lastAccessTime());
+          System.out.println("  lastModifiedTime: " + attr.lastModifiedTime());
+          System.out.println("  isDirectory: " + attr.isDirectory());
+          System.out.println("  isOther: " + attr.isOther());
+          System.out.println("  isRegularFile: " + attr.isRegularFile());
+          System.out.println("  isSymbolicLink: " + attr.isSymbolicLink());
+          System.out.println("  size: " + attr.size()); 
+          System.out.println(" ");
 
+          String inputFile = path.toString();
+          // Create one work unit for each file to pull
+          WorkUnit workUnit = new WorkUnit(state, extract);
+          workUnit.setProp(SOURCE_FILE_KEY, inputFile);
+          workUnits.add(workUnit);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+      }
       System.out.println(" ");
       System.out.println("----END----");
 
-      // Create one work unit for each file to pull
-      WorkUnit workUnit = new WorkUnit(state, extract);
-      workUnit.setProp(SOURCE_FILE_KEY, file);
-      workUnits.add(workUnit);
+
     }
 
     return workUnits;
