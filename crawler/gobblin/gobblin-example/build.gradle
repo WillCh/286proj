@@ -23,6 +23,7 @@ dependencies {
     compile externalDependency.gson
     compile externalDependency.commonsVfs
     compile externalDependency.commonsIo //IAN
+    compile externalDependency.jsonsimple //ERIC
     
     testCompile externalDependency.testng
 }

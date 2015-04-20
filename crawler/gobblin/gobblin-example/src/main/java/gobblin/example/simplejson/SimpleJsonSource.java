@@ -13,6 +13,7 @@ package gobblin.example.simplejson;
 
 import java.io.IOException;
 import java.io.File;
+import java.io.FileWriter;
 
 import java.util.List;
 import java.util.Iterator;
@@ -32,6 +33,8 @@ import org.apache.commons.io.FileUtils;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 /**
  * An implementation of {@link Source} for the simple JSON example.
@@ -61,6 +64,7 @@ public class SimpleJsonSource implements Source<String, String> {
         state.getProp(ConfigurationKeys.EXTRACT_NAMESPACE_NAME_KEY, "ExampleNamespace"), "ExampleTable");
 
     String filesToPull = state.getProp(ConfigurationKeys.SOURCE_FILEBASED_FILES_TO_PULL);
+    int nameCount = 0;
     for (String file : Splitter.on(',').omitEmptyStrings().split(filesToPull)) {
       Iterator it = FileUtils.iterateFiles(new File(file), null, true);
       while(it.hasNext()) {
@@ -80,10 +84,30 @@ public class SimpleJsonSource implements Source<String, String> {
           System.out.println("  size: " + attr.size()); 
           System.out.println(" ");
 
-          String inputFile = path.toString();
+          //creating intermediate JSON
+          JSONObject intermediate = new JSONObject();
+          intermediate.put("creationTime", attr.creationTime());
+          intermediate.put("lastAccessTime", attr.lastAccessTime());
+          intermediate.put("lastModifiedTime", attr.lastModifiedTime());
+          intermediate.put("isDirectory", attr.isDirectory());
+          intermediate.put("isOther", attr.isOther());
+          intermediate.put("isRegularFile", attr.isRegularFile());
+          intermediate.put("isSymbolicLink", attr.isSymbolicLink());
+          intermediate.put("size", attr.size());
+
+          //replace with your own path
+          String basePath = "/Users/erictu/Documents/286a/cs286A/crawler/gobblin/test_dir/";
+          nameCount += 1;
+          String intermediateName = "generated" + String.valueOf(nameCount) + ".json";
+          String finalName = basePath + intermediateName;
+          FileWriter generated = new FileWriter(finalName);
+          generated.write(intermediate.toJSONString());
+          generated.flush();
+          generated.close();
+
           // Create one work unit for each file to pull
           WorkUnit workUnit = new WorkUnit(state, extract);
-          workUnit.setProp(SOURCE_FILE_KEY, inputFile);
+          workUnit.setProp(SOURCE_FILE_KEY, finalName);
           workUnits.add(workUnit);
         }catch(IOException e){
             e.printStackTrace();
