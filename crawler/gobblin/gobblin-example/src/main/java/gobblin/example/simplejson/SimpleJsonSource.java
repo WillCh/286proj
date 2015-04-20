@@ -64,15 +64,26 @@ public class SimpleJsonSource implements Source<String, String> {
         state.getProp(ConfigurationKeys.EXTRACT_NAMESPACE_NAME_KEY, "ExampleNamespace"), "ExampleTable");
 
     String filesToPull = state.getProp(ConfigurationKeys.SOURCE_FILEBASED_FILES_TO_PULL);
+    File tempFileDir = new File("test_temp/"); // TODO: Delete the dir after completion.
+    tempFileDir.mkdir();
+    String tempFileDirAbsolute = "";
+    try{
+    	tempFileDirAbsolute = tempFileDir.getCanonicalPath(); // Retrieve absolute path of temp folder
+    } catch(IOException e){
+        e.printStackTrace();
+    }
+
     int nameCount = 0;
     for (String file : Splitter.on(',').omitEmptyStrings().split(filesToPull)) {
       Iterator it = FileUtils.iterateFiles(new File(file), null, true);
       while(it.hasNext()) {
         try{
           File newFile = (File) it.next();
+	  String basePath = newFile.getCanonicalPath(); // Retrieve absolute path of source
           Path path = newFile.toPath();
+
           // Print filename and associated metadata 
-          System.out.println(path);
+          System.out.println(basePath);
           BasicFileAttributes attr = Files.readAttributes(path, BasicFileAttributes.class);
           System.out.println("  creationTime: " + attr.creationTime());
           System.out.println("  lastAccessTime: " + attr.lastAccessTime());
@@ -95,11 +106,10 @@ public class SimpleJsonSource implements Source<String, String> {
           intermediate.put("isSymbolicLink", String.valueOf(attr.isSymbolicLink()));
           intermediate.put("size", String.valueOf(attr.size()));
 
-          //replace with your own path
-          String basePath = "/Users/erictu/Documents/286a/cs286A/crawler/gobblin/test_dir/";
+	  // Create intermediate temp file
           nameCount += 1;
-          String intermediateName = "generated" + String.valueOf(nameCount) + ".json";
-          String finalName = basePath + intermediateName;
+          String intermediateName = "/generated" + String.valueOf(nameCount) + ".json";
+          String finalName = tempFileDirAbsolute + intermediateName;
           FileWriter generated = new FileWriter(finalName);
           generated.write(intermediate.toJSONString());
           generated.flush();
