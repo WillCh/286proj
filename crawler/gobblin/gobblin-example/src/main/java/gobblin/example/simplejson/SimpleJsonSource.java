@@ -86,14 +86,14 @@ public class SimpleJsonSource implements Source<String, String> {
 
           //creating intermediate JSON
           JSONObject intermediate = new JSONObject();
-          intermediate.put("creationTime", attr.creationTime());
-          intermediate.put("lastAccessTime", attr.lastAccessTime());
-          intermediate.put("lastModifiedTime", attr.lastModifiedTime());
-          intermediate.put("isDirectory", attr.isDirectory());
-          intermediate.put("isOther", attr.isOther());
-          intermediate.put("isRegularFile", attr.isRegularFile());
-          intermediate.put("isSymbolicLink", attr.isSymbolicLink());
-          intermediate.put("size", attr.size());
+          intermediate.put("creationTime", String.valueOf(attr.creationTime()));
+          intermediate.put("lastAccessTime", String.valueOf(attr.lastAccessTime()));
+          intermediate.put("lastModifiedTime", String.valueOf(attr.lastModifiedTime()));
+          intermediate.put("isDirectory", String.valueOf(attr.isDirectory()));
+          intermediate.put("isOther", String.valueOf(attr.isOther()));
+          intermediate.put("isRegularFile", String.valueOf(attr.isRegularFile()));
+          intermediate.put("isSymbolicLink", String.valueOf(attr.isSymbolicLink()));
+          intermediate.put("size", String.valueOf(attr.size()));
 
           //replace with your own path
           String basePath = "/Users/erictu/Documents/286a/cs286A/crawler/gobblin/test_dir/";
