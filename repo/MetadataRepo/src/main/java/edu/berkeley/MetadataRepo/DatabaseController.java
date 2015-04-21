@@ -66,6 +66,26 @@ public class DatabaseController
 
     public static void show(String file)
     {
+        MongoCollection<Document> collection = database.getCollection("testData");
+
+        // Find a document with the given name
+        Document fdoc = new Document("file", file);
+        FindIterable<Document> found = collection.find(fdoc);
+
+        if (found.iterator().hasNext()) {
+            // If a document is found, it should be the only one
+            Document doc = found.iterator().next();
+            ArrayList<Document> metadataList  = (ArrayList<Document>) doc.get("metadata");
+
+            System.out.println("Metadata for " + file + ":");
+            for (Document d : metadataList)
+                System.out.println(d.toJson());
+        }
+        else
+        {
+            System.out.println("No file with that name.");
+        }
+
     }
 
     /** Using O(n) time to search. Assumes the metadata is at most one degree nested */
