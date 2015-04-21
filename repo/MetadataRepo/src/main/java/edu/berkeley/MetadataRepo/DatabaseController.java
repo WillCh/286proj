@@ -77,9 +77,16 @@ public class DatabaseController
             Document doc = found.iterator().next();
             ArrayList<Document> metadataList  = (ArrayList<Document>) doc.get("metadata");
 
+            /*
+            // This section of code would show ALL metadata commits ever
             System.out.println("Metadata for " + file + ":");
             for (Document d : metadataList)
                 System.out.println(d.toJson());
+            */
+            System.out.println("Most recent metadata for " + file + ":");
+            // Get size of metadata array (last element show be the most up-to-date entry
+            int currMetadataIndex = metadataList.size() - 1;
+            System.out.println(metadataList.get(currMetadataIndex).toJson());
         }
         else
         {
