@@ -1,11 +1,14 @@
 package edu.berkeley.MetadataRepo;
 
+
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -63,6 +66,51 @@ public class DatabaseController
 
     public static void show(String file)
     {
+    }
+
+    /** Using O(n) time to search. Assumes the metadata is at most one degree nested */
+    public static void find(String keyWord, String time)
+    {
+        boolean checkTime = false;
+        long startTime = 0;
+        long endTime = 0;
+        long compareTime = 0;
+        Date date;
+//        ArrayList<String> result = new ArrayList<String>();
+        SimpleDateFormat sdf  = new SimpleDateFormat("MM/dd/yy");
+
+        if (time != "None") {
+            checkTime = true;
+            try {
+                date = sdf.parse(time);
+            } catch (ParseException e) {
+                System.out.println("Time should be in MM/dd/yy format.");
+                return;
+            }
+            startTime = date.getTime();
+            endTime = startTime + 864000000;
+        }
+        MongoCollection<Document> collection = database.getCollection("testData");
+        for (Document d : collection.find()) {
+            ArrayList<Document> metadataList = (ArrayList<Document>) d.get("metadata");
+            for (int i = 0; i < metadataList.size(); i++ ) {
+                if (checkTime) {
+                    compareTime = ((Date) metadataList.get(i).get("timestamp")).getTime();
+                    if (compareTime < startTime || compareTime > endTime) break;
+                }
+                if (metadataList.get(i).get(keyWord) != null) {
+                    System.out.println(metadataList.get(i).toJson());
+                } else {
+                    for(String key : metadataList.get(i).keySet()) {
+                        if (metadataList.get(i).get(key).getClass() == Document.class) {
+                            if (((Document) metadataList.get(i).get(key)).get(keyWord) != null) {
+                                System.out.println(metadataList.get(i).toJson());
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public static void clear()

@@ -42,6 +42,14 @@ public class Main
             {
                 DatabaseController.show(cmds[1]);
             }
+            else if (act.equals("find"))
+            {
+                if (cmds.length == 3) {
+                    DatabaseController.find(cmds[1], cmds[2]);
+                }else {
+                    DatabaseController.find(cmds[1], "None");
+                };
+            }
             else if (act.equals("clear"))
             {
                 DatabaseController.clear();
