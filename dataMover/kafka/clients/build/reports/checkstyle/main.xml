@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.6">
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/ClientRequest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/ClientResponse.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/ClientUtils.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/ClusterConnectionStates.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/CommonClientConfigs.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/ConnectionState.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/InFlightRequests.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/KafkaClient.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/Metadata.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/NetworkClient.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/RequestCompletionHandler.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/CommitType.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/Consumer.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/ConsumerConfig.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/ConsumerRebalanceCallback.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/ConsumerRecord.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/ConsumerRecords.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/KafkaConsumer.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/MockConsumer.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/NoOffsetForPartitionException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/internals/Coordinator.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/internals/Fetcher.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/internals/Heartbeat.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/internals/NoOpConsumerRebalanceCallback.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/consumer/internals/SubscriptionState.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/BufferExhaustedException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/Callback.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/MockProducer.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/Producer.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/ProducerConfig.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/ProducerRecord.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/RecordMetadata.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/internals/BufferPool.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/internals/ErrorLoggingCallback.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/internals/FutureRecordMetadata.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/internals/Partitioner.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/internals/ProduceRequestResult.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/internals/RecordAccumulator.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/internals/RecordBatch.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/producer/internals/Sender.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/clients/tools/ProducerPerformance.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/Cluster.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/Configurable.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/KafkaException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/Metric.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/MetricName.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/Node.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/PartitionInfo.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/TopicPartition.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/config/AbstractConfig.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/config/ConfigDef.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/config/ConfigException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/ApiException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/CorruptRecordException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/InterruptException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/InvalidMetadataException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/InvalidRequiredAcksException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/InvalidTopicException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/LeaderNotAvailableException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/NetworkException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/NotEnoughReplicasAfterAppendException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/NotEnoughReplicasException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/NotLeaderForPartitionException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/OffsetMetadataTooLarge.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/OffsetOutOfRangeException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/RecordBatchTooLargeException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/RecordTooLargeException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/RetriableException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/SerializationException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/TimeoutException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/UnknownServerException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/errors/UnknownTopicOrPartitionException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/CompoundStat.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/JmxReporter.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/KafkaMetric.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/Measurable.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/MeasurableStat.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/MetricConfig.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/Metrics.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/MetricsReporter.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/Quota.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/QuotaViolationException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/Sensor.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/Stat.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/stats/Avg.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/stats/Count.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/stats/Histogram.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/stats/Max.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/stats/Min.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/stats/Percentile.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/stats/Percentiles.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/stats/Rate.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/stats/SampledStat.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/metrics/stats/Total.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/network/ByteBufferReceive.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/network/ByteBufferSend.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/network/NetworkReceive.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/network/NetworkSend.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/network/Receive.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/network/Selectable.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/network/Selector.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/network/Send.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/protocol/ApiKeys.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/protocol/Errors.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/protocol/ProtoUtils.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/protocol/Protocol.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/protocol/types/ArrayOf.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/protocol/types/Field.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/protocol/types/Schema.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/protocol/types/SchemaException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/protocol/types/Struct.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/protocol/types/Type.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/record/ByteBufferInputStream.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/record/ByteBufferOutputStream.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/record/CompressionType.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/record/Compressor.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/record/InvalidRecordException.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/record/KafkaLZ4BlockInputStream.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/record/KafkaLZ4BlockOutputStream.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/record/LogEntry.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/record/MemoryRecords.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/record/Record.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/record/Records.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/AbstractRequestResponse.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/ConsumerMetadataRequest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/ConsumerMetadataResponse.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/FetchRequest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/FetchResponse.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/HeartbeatRequest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/HeartbeatResponse.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/JoinGroupRequest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/JoinGroupResponse.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/ListOffsetRequest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/ListOffsetResponse.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/MetadataRequest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/MetadataResponse.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/OffsetCommitRequest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/OffsetCommitResponse.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/OffsetFetchRequest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/OffsetFetchResponse.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/ProduceRequest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/ProduceResponse.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/RequestHeader.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/RequestSend.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/requests/ResponseHeader.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/serialization/ByteArrayDeserializer.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/serialization/ByteArraySerializer.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/serialization/Deserializer.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/serialization/Serializer.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/serialization/StringDeserializer.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/serialization/StringSerializer.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/utils/AbstractIterator.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/utils/CollectionUtils.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/utils/CopyOnWriteMap.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/utils/Crc32.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/utils/KafkaThread.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/utils/SystemTime.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/utils/Time.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/main/java/org/apache/kafka/common/utils/Utils.java">
+</file>
+</checkstyle>
