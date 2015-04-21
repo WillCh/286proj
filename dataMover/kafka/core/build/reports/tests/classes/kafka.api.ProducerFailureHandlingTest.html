@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Test results - Class kafka.api.ProducerFailureHandlingTest</title>
+<link href="css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<script src="js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class kafka.api.ProducerFailureHandlingTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/kafka.api.html">kafka.api</a> &gt; ProducerFailureHandlingTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">11</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1m6.03s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testBrokerFailure</td>
+<td>13.208s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCannotSendToInternalTopic</td>
+<td>2.090s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testInvalidPartition</td>
+<td>2.281s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testNoResponse</td>
+<td>8.211s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testNonExistentTopic</td>
+<td>4.743s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testNotEnoughReplicas</td>
+<td>2.071s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testNotEnoughReplicasAfterBrokerShutdown</td>
+<td>21.848s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testSendAfterClosed</td>
+<td>2.294s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testTooLargeRecordWithAckOne</td>
+<td>2.083s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testTooLargeRecordWithAckZero</td>
+<td>2.281s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testWrongBrokerList</td>
+<td>4.919s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>[2015-03-27 14:38:51,976] WARN Exception causing close of session 0x0 due to java.io.IOException: ZooKeeperServer not running (org.apache.zookeeper.server.NIOServerCnxn:362)
+[2015-03-27 14:39:19,786] ERROR [Replica Manager on Broker 1]: Error processing append operation on partition [minisrtest,0] (kafka.server.ReplicaManager:103)
+kafka.common.NotEnoughReplicasException: Number of insync replicas for partition [minisrtest,0] is [3], below required minimum [2]
+	at kafka.cluster.Partition$$anonfun$appendMessagesToLeader$1.apply(Partition.scala:411)
+	at kafka.cluster.Partition$$anonfun$appendMessagesToLeader$1.apply(Partition.scala:401)
+	at kafka.utils.Utils$.inLock(Utils.scala:566)
+	at kafka.utils.Utils$.inReadLock(Utils.scala:572)
+	at kafka.cluster.Partition.appendMessagesToLeader(Partition.scala:401)
+	at kafka.server.ReplicaManager$$anonfun$appendToLocalLog$2.apply(ReplicaManager.scala:342)
+	at kafka.server.ReplicaManager$$anonfun$appendToLocalLog$2.apply(ReplicaManager.scala:327)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:98)
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:98)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:226)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:39)
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:98)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:105)
+	at kafka.server.ReplicaManager.appendToLocalLog(ReplicaManager.scala:327)
+	at kafka.server.ReplicaManager.appendMessages(ReplicaManager.scala:263)
+	at kafka.server.KafkaApis.handleProducerRequest(KafkaApis.scala:235)
+	at kafka.server.KafkaApis.handle(KafkaApis.scala:60)
+	at kafka.server.KafkaRequestHandler.run(KafkaRequestHandler.scala:59)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:39:20,663] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn:357)
+EndOfStreamException: Unable to read additional data from client sessionid 0x14c5d2cccfc0001, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:228)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:208)
+	at java.lang.Thread.run(Thread.java:744)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>Generated by 
+<a href="http://www.gradle.org">Gradle 1.12</a> at Mar 27, 2015 2:45:12 PM</p>
+</div>
+</div>
+</body>
