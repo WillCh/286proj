@@ -13,6 +13,7 @@ package gobblin.example.simplejson;
 
 import java.io.IOException;
 import java.io.File;
+import java.io.FileWriter;
 
 import java.util.List;
 import java.util.Iterator;
@@ -32,6 +33,8 @@ import org.apache.commons.io.FileUtils;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 /**
  * An implementation of {@link Source} for the simple JSON example.
@@ -61,14 +64,26 @@ public class SimpleJsonSource implements Source<String, String> {
         state.getProp(ConfigurationKeys.EXTRACT_NAMESPACE_NAME_KEY, "ExampleNamespace"), "ExampleTable");
 
     String filesToPull = state.getProp(ConfigurationKeys.SOURCE_FILEBASED_FILES_TO_PULL);
+    File tempFileDir = new File("test_temp/"); // TODO: Delete the dir after completion.
+    tempFileDir.mkdir();
+    String tempFileDirAbsolute = "";
+    try{
+    	tempFileDirAbsolute = tempFileDir.getCanonicalPath(); // Retrieve absolute path of temp folder
+    } catch(IOException e){
+        e.printStackTrace();
+    }
+
+    int nameCount = 0;
     for (String file : Splitter.on(',').omitEmptyStrings().split(filesToPull)) {
       Iterator it = FileUtils.iterateFiles(new File(file), null, true);
       while(it.hasNext()) {
         try{
           File newFile = (File) it.next();
+	  String basePath = newFile.getCanonicalPath(); // Retrieve absolute path of source
           Path path = newFile.toPath();
+
           // Print filename and associated metadata 
-          System.out.println(path);
+          System.out.println(basePath);
           BasicFileAttributes attr = Files.readAttributes(path, BasicFileAttributes.class);
           System.out.println("  creationTime: " + attr.creationTime());
           System.out.println("  lastAccessTime: " + attr.lastAccessTime());
@@ -80,10 +95,29 @@ public class SimpleJsonSource implements Source<String, String> {
           System.out.println("  size: " + attr.size()); 
           System.out.println(" ");
 
-          String inputFile = path.toString();
+          //creating intermediate JSON
+          JSONObject intermediate = new JSONObject();
+          intermediate.put("creationTime", String.valueOf(attr.creationTime()));
+          intermediate.put("lastAccessTime", String.valueOf(attr.lastAccessTime()));
+          intermediate.put("lastModifiedTime", String.valueOf(attr.lastModifiedTime()));
+          intermediate.put("isDirectory", String.valueOf(attr.isDirectory()));
+          intermediate.put("isOther", String.valueOf(attr.isOther()));
+          intermediate.put("isRegularFile", String.valueOf(attr.isRegularFile()));
+          intermediate.put("isSymbolicLink", String.valueOf(attr.isSymbolicLink()));
+          intermediate.put("size", String.valueOf(attr.size()));
+
+	  // Create intermediate temp file
+          nameCount += 1;
+          String intermediateName = "/generated" + String.valueOf(nameCount) + ".json";
+          String finalName = tempFileDirAbsolute + intermediateName;
+          FileWriter generated = new FileWriter(finalName);
+          generated.write(intermediate.toJSONString());
+          generated.flush();
+          generated.close();
+
           // Create one work unit for each file to pull
           WorkUnit workUnit = new WorkUnit(state, extract);
-          workUnit.setProp(SOURCE_FILE_KEY, inputFile);
+          workUnit.setProp(SOURCE_FILE_KEY, finalName);
           workUnits.add(workUnit);
         }catch(IOException e){
             e.printStackTrace();
