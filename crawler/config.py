@@ -10,4 +10,5 @@
 
 #stats_to_collect="date","time","size"
 
-directories_to_crawl=["gobblin/test_source"]
+# TODO: path currently relative to test_config directory, does this make sense?
+directories_to_crawl=["../test_source/"]
