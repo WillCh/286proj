@@ -23,6 +23,9 @@ pull_file.write("""
 job.name=GobblinCrawl
 job.group=crawler
 job.description=A Gobblin job for the metadata crawler
+""")
+pull_file.write("job.schedule=" + config.schedule)
+pull_file.write("""
 
 source.class=gobblin.example.simplejson.SimpleJsonSource
 converter.classes=gobblin.example.simplejson.SimpleJsonConverter
@@ -56,14 +59,13 @@ writer.fs.uri=file:///
 """)
 
 pull_file.close()
- 
+
+# start a monitor to check for new files in the job output directory
+# TODO: call react_wrapper.sh in a subprocess, replace 'action' script test.sh with an scp call to destination machine
+
 # run Gobblin
 os.chdir("gobblin")
 subprocess.call(["./run_gobblin_standalone.sh"])
-
-# wait for job to finish
-# TODO: this sleep is a hack! figure out how to do this better
-time.sleep(10)
 
 # collect and merge avro files
 os.chdir("test_workdir/job-output/gobblin/example/simplejson/ExampleTable/")
@@ -78,11 +80,3 @@ for r in results:
   for line in open(results_dir[0] + "/" + r, "r"):
     merged_avro.write(line + "\n")
     #TODO: this is weird b/c avro isn't a plain text file anyway, so adding newlines seems to just mess things up
-
-# kill gobblin
-os.chdir("../../../../../")
-for line in open(".gobblin-pid", "r"):
-  subprocess.call(["kill", "-9", line.rstrip()])
-
-# scp to data mover
-# TODO

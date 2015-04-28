@@ -12,3 +12,4 @@
 
 # TODO: path currently relative to test_config directory, does this make sense?
 directories_to_crawl=["../test_source/"]
+schedule="0/20 * * * * ?" #cron schedule

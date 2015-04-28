@@ -1,0 +1,4 @@
+* need inotify-tools package for inotifywait:
+  sudo apt-get install inotify-tools
+
+* pyinotify, react, or inotifywait
