@@ -56,7 +56,7 @@ writer.fs.uri=file:///
 """)
 
 pull_file.close()
-
+ 
 # run Gobblin
 os.chdir("gobblin")
 subprocess.call(["./run_gobblin_standalone.sh"])
@@ -69,16 +69,18 @@ time.sleep(10)
 os.chdir("test_workdir/job-output/gobblin/example/simplejson/ExampleTable/")
 results_dir = glob.glob("*_append")
 os.chdir(results_dir[0])
-
-merged_avro = open("merged.avro", "w")
 results = glob.glob("*.avro")
+
+# put the merged file in a less volatile directory (so that the Mover Monitor can find it)
+os.chdir("../")
+merged_avro = open("merged.avro", "w")
 for r in results:
-  for line in open(r, "r"):
+  for line in open(results_dir[0] + "/" + r, "r"):
     merged_avro.write(line + "\n")
     #TODO: this is weird b/c avro isn't a plain text file anyway, so adding newlines seems to just mess things up
 
 # kill gobblin
-os.chdir("../../../../../../")
+os.chdir("../../../../../")
 for line in open(".gobblin-pid", "r"):
   subprocess.call(["kill", "-9", line.rstrip()])
 
