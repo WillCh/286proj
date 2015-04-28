@@ -50,6 +50,8 @@ public class MetadataRepo
             else if (act.equals("show"))
             {
                 show(cmds[1], cmds[2]);
+                // Note: Should also implement time parameter in 'show', similar to how it is implemented in 'find'
+                //   This will allow the user to query files as far back in time as they wish.
             }
             else if (act.equals("find"))
             {
@@ -135,6 +137,8 @@ public class MetadataRepo
         // Find a document with the given name
         Document fdoc = new Document("file", file);
         FindIterable<Document> found = collection.find(fdoc);
+        // also consider using collection.findOne, which will return only the first result
+        //   from the result set, and not a MongoCursor that can be iterated over
 
         if (found.iterator().hasNext()) {
             // If a document is found, it should be the only one
@@ -148,15 +152,13 @@ public class MetadataRepo
                 System.out.println(d.toJson());
             */
             System.out.println("Most recent metadata for " + file + ":");
-            // Get size of metadata array (last element show be the most up-to-date entry
+
+            // Get size of metadata array (last element should be the most up-to-date entry)
             int currMetadataIndex = metadataList.size() - 1;
+            
             System.out.println(metadataList.get(currMetadataIndex).toJson());
         }
-        else
-        {
-            System.out.println("No file with that name.");
-        }
-
+        else { System.out.println("No file with that name."); }
     }
 
     /**
