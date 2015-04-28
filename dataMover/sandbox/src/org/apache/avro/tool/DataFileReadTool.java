@@ -62,7 +62,7 @@ public class DataFileReadTool implements Tool {
       // Unlike other commands, "-" can't be used for stdin, because
       // we can only use seekable files.
       err.println("tojson --pretty input-file");
-      err.println("   converts Avro data file to JSON.");
+      err.println(" DataMover team Modified!!!  converts Avro data file to JSON.");
       optionParser.printHelpOn(err);
       return 1;
     }
