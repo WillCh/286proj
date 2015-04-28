@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.6">
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/ClientUtilsTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/MetadataTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/MockClient.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/NetworkClientTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/consumer/MockConsumerTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/consumer/internals/CoordinatorTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/consumer/internals/FetcherTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/consumer/internals/HeartbeatTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/consumer/internals/SubscriptionStateTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/producer/MockProducerTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/producer/ProducerRecordTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/producer/RecordSendTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/producer/internals/BufferPoolTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/producer/internals/PartitionerTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/producer/internals/RecordAccumulatorTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/clients/producer/internals/SenderTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/config/AbstractConfigTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/config/ConfigDefTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/metrics/FakeMetricsReporter.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/metrics/JmxReporterTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/metrics/MetricsTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/metrics/stats/HistogramTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/network/SelectorTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/protocol/types/ProtocolSerializationTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/record/MemoryRecordsTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/record/RecordTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/requests/RequestResponseTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/serialization/SerializationTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/utils/AbstractIteratorTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/utils/CrcTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/utils/MockTime.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/common/utils/UtilsTest.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/test/MetricsBench.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/test/Microbenchmarks.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/test/MockSelector.java">
+</file>
+<file name="/Users/jialianggu/courses/cs286/286Project/kafka/clients/src/test/java/org/apache/kafka/test/TestUtils.java">
+</file>
+</checkstyle>

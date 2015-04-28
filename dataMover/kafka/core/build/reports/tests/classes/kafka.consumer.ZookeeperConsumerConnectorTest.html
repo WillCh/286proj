@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Test results - Class kafka.consumer.ZookeeperConsumerConnectorTest</title>
+<link href="css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<script src="js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class kafka.consumer.ZookeeperConsumerConnectorTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/kafka.consumer.html">kafka.consumer</a> &gt; ZookeeperConsumerConnectorTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">6</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">29.141s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testBasic</td>
+<td>9.191s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCompression</td>
+<td>8.792s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCompressionSetConsumption</td>
+<td>2.890s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testConsumerDecoder</td>
+<td>3.109s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testConsumerRebalanceListener</td>
+<td>2.890s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testLeaderSelectionForPartition</td>
+<td>2.269s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>[2015-03-27 14:40:22,593] ERROR Failed to collate messages by topic, partition due to: Failed to fetch topic metadata for topic: topic1 (kafka.producer.async.DefaultEventHandler:97)
+[2015-03-27 14:40:23,758] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:25,481] ERROR Failed to collate messages by topic, partition due to: Failed to fetch topic metadata for topic: topic1 (kafka.producer.async.DefaultEventHandler:97)
+[2015-03-27 14:40:26,640] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:26,641] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:26,977] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:28,706] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:30,634] ERROR Failed to collate messages by topic, partition due to: Failed to fetch topic metadata for topic: topic1 (kafka.producer.async.DefaultEventHandler:97)
+[2015-03-27 14:40:31,999] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:32,102] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:33,747] ERROR Failed to collate messages by topic, partition due to: Failed to fetch topic metadata for topic: topic1 (kafka.producer.async.DefaultEventHandler:97)
+[2015-03-27 14:40:35,106] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:35,106] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:40,287] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:40,299] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:43,038] ERROR Failed to collate messages by topic, partition due to: Failed to fetch topic metadata for topic: topic1 (kafka.producer.async.DefaultEventHandler:97)
+[2015-03-27 14:40:44,393] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:44,499] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:49,578] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:49,905] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+[2015-03-27 14:40:50,012] ERROR Closing socket for /127.0.0.1 because of error (kafka.network.Processor:103)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at kafka.utils.Utils$.read(Utils.scala:380)
+	at kafka.network.BoundedByteBufferReceive.readFrom(BoundedByteBufferReceive.scala:54)
+	at kafka.network.Processor.read(SocketServer.scala:444)
+	at kafka.network.Processor.run(SocketServer.scala:340)
+	at java.lang.Thread.run(Thread.java:744)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>Generated by 
+<a href="http://www.gradle.org">Gradle 1.12</a> at Mar 27, 2015 2:45:12 PM</p>
+</div>
+</div>
+</body>
