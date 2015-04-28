@@ -55,4 +55,5 @@ out/
 **/mainGeneratedRest
 gobblin-dist*.tar.gz
 gobblin-dist/
+test_workdir/
 .DS_STORE
