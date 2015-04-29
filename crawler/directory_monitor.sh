@@ -8,5 +8,5 @@
 #           i.e. ian@localhost
 
 
+echo "NOMNOM ${1} ${2}" > testing.txt
 ./react.py ${1} -p "*.avro" './action.sh ${1} ${2} $f'
-#./react.py ${1} -p "*.tar.gz" './action2.sh $f' #for mover group: uncomment this line, and comment out the one above. edit action2.sh to invoke your executable or script

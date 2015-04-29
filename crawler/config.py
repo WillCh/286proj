@@ -12,4 +12,5 @@
 
 # TODO: path currently relative to test_config directory, does this make sense?
 directories_to_crawl=["../test_source/"]
-schedule="0/20 * * * * ?" #cron schedule
+schedule="0/50 * * * * ?" #cron schedule
+data_mover_location="localhost"

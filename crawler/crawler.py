@@ -60,23 +60,34 @@ writer.fs.uri=file:///
 
 pull_file.close()
 
+# clear out old work directory
+subprocess.call(["rm", "-rf", "gobblin/test_workdir"])
+subprocess.call(["mkdir", "gobblin/test_workdir"])
+
+# build path to output directory so we can setup a watch on it (a bit hacky)
+dirs_to_create = ["job-output/", "gobblin/", "example/", "simplejson/", "ExampleTable/"]
+path = "gobblin/test_workdir/"
+for i in range(0, len(dirs_to_create)):
+  path = path + dirs_to_create[i]
+  subprocess.call(["mkdir", path])
+
 # start a monitor to check for new files in the job output directory
-# TODO: call react_wrapper.sh in a subprocess, replace 'action' script test.sh with an scp call to destination machine
+subprocess.Popen("./directory_monitor.sh gobblin/test_workdir " + config.data_mover_location, shell=True)
 
 # run Gobblin
 os.chdir("gobblin")
 subprocess.call(["./run_gobblin_standalone.sh"])
 
-# collect and merge avro files
-os.chdir("test_workdir/job-output/gobblin/example/simplejson/ExampleTable/")
-results_dir = glob.glob("*_append")
-os.chdir(results_dir[0])
-results = glob.glob("*.avro")
-
-# put the merged file in a less volatile directory (so that the Mover Monitor can find it)
-os.chdir("../")
-merged_avro = open("merged.avro", "w")
-for r in results:
-  for line in open(results_dir[0] + "/" + r, "r"):
-    merged_avro.write(line + "\n")
-    #TODO: this is weird b/c avro isn't a plain text file anyway, so adding newlines seems to just mess things up
+## collect and merge avro files
+#os.chdir("test_workdir/job-output/gobblin/example/simplejson/ExampleTable/")
+#results_dir = glob.glob("*_append")
+#os.chdir(results_dir[0])
+#results = glob.glob("*.avro")
+#
+## put the merged file in a less volatile directory (so that the Mover Monitor can find it)
+#os.chdir("../")
+#merged_avro = open("merged.avro", "w")
+#for r in results:
+#  for line in open(results_dir[0] + "/" + r, "r"):
+#    merged_avro.write(line + "\n")
+#    #TODO: this is weird b/c avro isn't a plain text file anyway, so adding newlines seems to just mess things up

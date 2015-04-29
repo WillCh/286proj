@@ -123,9 +123,19 @@ public class SimpleJsonSource implements Source<String, String> {
             e.printStackTrace();
         }
       }
+
+      // write out number of files found to temp file
+      try {
+        FileWriter numFiles = new FileWriter(tempFileDirAbsolute + "/numFiles.txt");
+        numFiles.write("" + nameCount);
+        numFiles.flush();
+        numFiles.close();
+      }catch(IOException e){
+          e.printStackTrace();
+      }
+
       System.out.println(" ");
       System.out.println("----END----");
-
 
     }
 
