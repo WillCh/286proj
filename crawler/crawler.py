@@ -62,7 +62,11 @@ pull_file.close()
 
 # clear out old work directory
 subprocess.call(["rm", "-rf", "gobblin/test_workdir"])
+subprocess.call(["rm", "-rf", "gobblin/output-tarballs"])
+
+# create work and output directories
 subprocess.call(["mkdir", "gobblin/test_workdir"])
+subprocess.call(["mkdir", "gobblin/output-tarballs"])
 
 # build path to output directory so we can setup a watch on it (a bit hacky)
 dirs_to_create = ["job-output/", "gobblin/", "example/", "simplejson/", "ExampleTable/"]
@@ -72,7 +76,7 @@ for i in range(0, len(dirs_to_create)):
   subprocess.call(["mkdir", path])
 
 # start a monitor to check for new files in the job output directory
-subprocess.Popen("./directory_monitor.sh gobblin/test_workdir " + config.data_mover_location, shell=True)
+subprocess.Popen(["./inotifywait.sh", "gobblin/test_workdir", config.data_mover_location])
 
 # run Gobblin
 os.chdir("gobblin")
