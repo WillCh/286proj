@@ -56,4 +56,6 @@ out/
 gobblin-dist*.tar.gz
 gobblin-dist/
 test_workdir/
+test_config/
+output-tarballs/
 .DS_STORE

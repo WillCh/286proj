@@ -84,6 +84,7 @@ if command == 'start' or command == 'run' or command == 'gogobunnies':
   inotify_process = subprocess.Popen(["./inotifywait.sh", "gobblin/test_workdir", config.data_mover_location])
   pid_file = open('.inotify_pid', 'w')
   pid_file.write(str(inotify_process.pid))
+  pid_file.close()
 
   # run Gobblin
   os.chdir("gobblin")
@@ -93,6 +94,8 @@ elif command == 'stop' or command == 'kill' or command == 'bunnydeathtoall':
   pid_file = open('.inotify_pid', 'r')
   inotify_pid = pid_file.readlines()[0]
   os.killpg(os.getpgid(int(inotify_pid)), 9)
+  pid_file.close()
+  os.remove('.inotify_pid')
 
 
 
