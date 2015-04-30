@@ -175,7 +175,7 @@ object FileConsumer extends Logging {
 		
 	//MetadataRepo will provide this API
 	// line should be formatted like "commit namespace c.csv {"owner":"Fei"} 1273651276536721"
-	MetadataRepo.execute(line)
+	//MetadataRepo.execute(line)
 
         //blahblahblah.commit("a.csv", "{numLines:200}", timestamp)  
 	formatter.writeTo(messageAndTopic.key, messageAndTopic.message, OUTPUTFILE)
