@@ -4,8 +4,8 @@
 # Command to run gobblin standalone example after compilation
 
 # clear out old test_workdir
-rm -rf test_workdir
-mkdir test_workdir
+#rm -rf test_workdir
+#mkdir test_workdir
 
 # set environment variables
 export GOBBLIN_JOB_CONFIG_DIR=../test_config
