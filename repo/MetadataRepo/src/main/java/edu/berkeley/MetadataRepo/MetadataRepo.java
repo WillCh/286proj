@@ -1,8 +1,11 @@
 package edu.berkeley.MetadataRepo;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCursor;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
@@ -160,19 +163,17 @@ public class MetadataRepo
     }
 
     /**
-     * Using O(n) time to search. Assumes the metadata is at most one degree nested
+     * Assumes the metadata is at most one degree nested
      * */
     public void find(String namespace, String keyword, String time)
     {
         boolean checkTime = false;
         long startTime = 0;
         long endTime = 0;
-        long compareTime = 0;
         Date date;
-        //ArrayList<String> result = new ArrayList<String>();
         SimpleDateFormat sdf  = new SimpleDateFormat("MM/dd/yy");
 
-        if (time != "None") {
+        if (!time.equals("None")) {
             checkTime = true;
             try {
                 date = sdf.parse(time);
@@ -181,29 +182,72 @@ public class MetadataRepo
                 return;
             }
             startTime = date.getTime();
-            endTime = startTime + 864000000;
+            endTime = startTime + 86400000;
+
         }
+
+        String[] temp = keyword.split("=");
+
         MongoCollection<Document> collection = database.getCollection(namespace);
-        for (Document d : collection.find()) {
+
+        BasicDBObject query;
+        String fileName;
+        int count = 0;
+        long compTime = 0;
+        MongoCursor k;
+        if (!checkTime) {
+            if (temp[1].equals("*")) {
+                query = new BasicDBObject("metadata", new BasicDBObject("$elemMatch",
+                            new BasicDBObject(temp[0], new BasicDBObject("$exists",true))));
+            } else {
+                query = new BasicDBObject("metadata", new BasicDBObject("$elemMatch",
+                            new BasicDBObject(temp[0], temp[1])));
+            }
+            FindIterable<Document> cursor = collection.find(query);
+            k = cursor.iterator();
+        } else {
+            if (temp[1].equals("*")) {
+                query = new BasicDBObject("metadata", new BasicDBObject("$elemMatch",
+                            new BasicDBObject(TIMESTAMP, new BasicDBObject("$gt", new Date(startTime))
+                                    .append("$lte", new Date(endTime))).append(temp[0], new BasicDBObject("$exists", true))));
+            } else {
+                query = new BasicDBObject("metadata", new BasicDBObject("$elemMatch",
+                            new BasicDBObject(TIMESTAMP, new BasicDBObject("$gt", new Date(startTime))
+                                    .append("$lte", new Date(endTime))).append(temp[0], temp[1])));
+            }
+            FindIterable<Document> cursor = collection.find(query);
+            k = cursor.iterator();
+        }
+
+
+        System.out.println("=======================================================================");
+        System.out.println("Namespace: " + namespace);
+        System.out.println("-----------------------------------------------------------------------");
+        while (k.hasNext()) {
+            Document d = (Document) k.next();
             ArrayList<Document> metadataList = (ArrayList<Document>) d.get("metadata");
-            for (int i = 0; i < metadataList.size(); i++ ) {
-                if (checkTime) {
-                    compareTime = ((Date) metadataList.get(i).get(TIMESTAMP)).getTime();
-                    if (compareTime < startTime || compareTime > endTime) break;
-                }
-                if (metadataList.get(i).get(keyword) != null) {
-                    System.out.println(metadataList.get(i).toJson());
-                } else {
-                    for(String key : metadataList.get(i).keySet()) {
-                        if (metadataList.get(i).get(key).getClass() == Document.class) {
-                            if (((Document) metadataList.get(i).get(key)).get(keyword) != null) {
-                                System.out.println(metadataList.get(i).toJson());
+            fileName = (String) d.get("file");
+            boolean firstT = false;
+            for (int i = 0; i < metadataList.size(); i++) {
+                if (metadataList.get(i).get(temp[0]) != null) {
+                    if (temp[1].equals("*") || metadataList.get(i).get(temp[0]).equals(temp[1])
+                            || (metadataList.get(i).get(temp[0]).getClass() == ArrayList.class
+                                && ((ArrayList <String>) metadataList.get(i).get(temp[0])).contains(temp[1])) ) {
+                        compTime =  ((Date) metadataList.get(i).get(TIMESTAMP)).getTime();
+                        if ( checkTime && (compTime <= endTime && compTime > startTime) || !checkTime) {
+                            if (!firstT) {
+                                firstT = true;
+                                System.out.println("In file " + fileName + ":");
                             }
+                            System.out.println(metadataList.get(i).toJson());
+                            count++;
                         }
                     }
                 }
             }
         }
+        System.out.println(count + " records found.");
+        System.out.println("=======================================================================");
     }
 
     public void clear(String namespace)
