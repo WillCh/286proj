@@ -17,6 +17,7 @@ import java.io.FileWriter;
 
 import java.util.List;
 import java.util.Iterator;
+import java.util.Date;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
@@ -35,6 +36,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 
 /**
  * An implementation of {@link Source} for the simple JSON example.
@@ -97,6 +103,10 @@ public class SimpleJsonSource implements Source<String, String> {
 
           //creating intermediate JSON
           JSONObject intermediate = new JSONObject();
+          intermediate.put("filename", basePath);
+          intermediate.put("timestamp", String.valueOf((new Date()).getTime()));
+          intermediate.put("namespace", getMacAddress());
+
           intermediate.put("creationTime", String.valueOf(attr.creationTime()));
           intermediate.put("lastAccessTime", String.valueOf(attr.lastAccessTime()));
           intermediate.put("lastModifiedTime", String.valueOf(attr.lastModifiedTime()));
@@ -134,9 +144,6 @@ public class SimpleJsonSource implements Source<String, String> {
           e.printStackTrace();
       }
 
-      System.out.println(" ");
-      System.out.println("----END----");
-
     }
 
     return workUnits;
@@ -151,5 +158,22 @@ public class SimpleJsonSource implements Source<String, String> {
   @Override
   public void shutdown(SourceState state) {
     // Nothing to do
+  }
+
+  private String getMacAddress() {
+    //InetAddress ip;
+    //String mac_string = "default";
+    //try {
+    //  ip = InetAddress.getLocalHost();
+    //  NetworkInterface network = NetworkInterface.getByInetAddress(ip);
+    //  byte[] mac = network.getHardwareAddress();
+    //  mac_string = mac.toString();
+    //} catch (UnknownHostException e) {
+    //  e.printStackTrace();
+    //} catch (SocketException e){
+    //  e.printStackTrace();
+    //}
+    String mac_string = "default";
+    return mac_string;
   }
 }

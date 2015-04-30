@@ -19,17 +19,14 @@ output_dir=$(echo $3 | sed 's/\(.*\/\)\(.*_append$\)/\2/')
 if [[ $dir_path == *"job-output/gobblin/example/simplejson/ExampleTable"* && $dir_path != *".avro" ]]
 then
 
-  echo "found this guy ${3}"
-
   expected_file=gobblin/gobblin-dist/test_temp/numFiles.txt
   expected_num_files=`cat $expected_file` > /dev/null 2>&1
 
   num_files=$(ls -l ${dir_path}/*.avro | wc -l)
 
-  echo "num found: $num_files | num_expected: $expected_num_files"
   if [ "$num_files" -eq "$expected_num_files" ]
   then
-    echo "creating archive for ${dir_path}"
+    echo "creating tar archive for ${dir_path}"
     tar -czf "${1}/../output-tarballs/${output_dir}.tar.gz" -C ${dir_path} .
     echo "transferring to ${2}"
     #scp ${1}.tar.gz ${2}
