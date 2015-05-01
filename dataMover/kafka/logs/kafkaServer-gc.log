@@ -1,13 +1,20 @@
-2015-04-30T16:11:37.298+0800: 27.279: [GC [1 CMS-initial-mark: 0K(707840K)] 174600K(1014528K), 0.0252010 secs] [Times: user=0.02 sys=0.00, real=0.03 secs] 
-2015-04-30T16:11:37.323+0800: 27.305: [CMS-concurrent-mark-start]
-2015-04-30T16:11:37.342+0800: 27.323: [CMS-concurrent-mark: 0.019/0.019 secs] [Times: user=0.02 sys=0.00, real=0.02 secs] 
-2015-04-30T16:11:37.342+0800: 27.323: [CMS-concurrent-preclean-start]
-2015-04-30T16:11:37.357+0800: 27.339: [CMS-concurrent-preclean: 0.015/0.015 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
-2015-04-30T16:11:37.357+0800: 27.339: [CMS-concurrent-abortable-preclean-start]
- CMS: abort preclean due to time 2015-04-30T16:11:42.367+0800: 32.348: [CMS-concurrent-abortable-preclean: 0.095/5.009 secs] [Times: user=0.17 sys=0.02, real=5.01 secs] 
-2015-04-30T16:11:42.367+0800: 32.349: [GC[YG occupancy: 190964 K (306688 K)]2015-04-30T16:11:42.367+0800: 32.349: [GC2015-04-30T16:11:42.367+0800: 32.349: [ParNew: 190964K->10671K(306688K), 0.0162850 secs] 190964K->10671K(1014528K), 0.0163600 secs] [Times: user=0.05 sys=0.01, real=0.02 secs] 
-2015-04-30T16:11:42.384+0800: 32.365: [Rescan (parallel) , 0.0060870 secs]2015-04-30T16:11:42.390+0800: 32.371: [weak refs processing, 0.0000180 secs]2015-04-30T16:11:42.390+0800: 32.371: [class unloading, 0.0008140 secs]2015-04-30T16:11:42.391+0800: 32.372: [scrub symbol table, 0.0011410 secs]2015-04-30T16:11:42.392+0800: 32.373: [scrub string table, 0.0002280 secs] [1 CMS-remark: 0K(707840K)] 10671K(1014528K), 0.0249480 secs] [Times: user=0.07 sys=0.01, real=0.03 secs] 
-2015-04-30T16:11:42.392+0800: 32.374: [CMS-concurrent-sweep-start]
-2015-04-30T16:11:42.397+0800: 32.379: [CMS-concurrent-sweep: 0.004/0.005 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
-2015-04-30T16:11:42.397+0800: 32.379: [CMS-concurrent-reset-start]
-2015-04-30T16:11:42.399+0800: 32.380: [CMS-concurrent-reset: 0.002/0.002 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
+2015-04-30T19:19:00.103+0800: 3.556: [GC [1 CMS-initial-mark: 0K(707840K)] 179949K(1014528K), 0.0294790 secs] [Times: user=0.03 sys=0.00, real=0.03 secs] 
+2015-04-30T19:19:00.132+0800: 3.586: [CMS-concurrent-mark-start]
+2015-04-30T19:19:00.151+0800: 3.605: [CMS-concurrent-mark: 0.019/0.019 secs] [Times: user=0.01 sys=0.01, real=0.02 secs] 
+2015-04-30T19:19:00.151+0800: 3.605: [CMS-concurrent-preclean-start]
+2015-04-30T19:19:00.164+0800: 3.618: [CMS-concurrent-preclean: 0.013/0.013 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+2015-04-30T19:19:00.164+0800: 3.618: [CMS-concurrent-abortable-preclean-start]
+ CMS: abort preclean due to time 2015-04-30T19:19:05.199+0800: 8.653: [CMS-concurrent-abortable-preclean: 0.101/5.035 secs] [Times: user=0.18 sys=0.02, real=5.03 secs] 
+2015-04-30T19:19:05.200+0800: 8.653: [GC[YG occupancy: 190859 K (306688 K)]2015-04-30T19:19:05.200+0800: 8.654: [GC2015-04-30T19:19:05.200+0800: 8.654: [ParNew: 190859K->10599K(306688K), 0.0164120 secs] 190859K->10599K(1014528K), 0.0164870 secs] [Times: user=0.04 sys=0.01, real=0.01 secs] 
+2015-04-30T19:19:05.216+0800: 8.670: [Rescan (parallel) , 0.0056450 secs]2015-04-30T19:19:05.222+0800: 8.676: [weak refs processing, 0.0000160 secs]2015-04-30T19:19:05.222+0800: 8.676: [class unloading, 0.0008040 secs]2015-04-30T19:19:05.223+0800: 8.677: [scrub symbol table, 0.0010690 secs]2015-04-30T19:19:05.224+0800: 8.678: [scrub string table, 0.0002110 secs] [1 CMS-remark: 0K(707840K)] 10599K(1014528K), 0.0245290 secs] [Times: user=0.07 sys=0.01, real=0.02 secs] 
+2015-04-30T19:19:05.224+0800: 8.678: [CMS-concurrent-sweep-start]
+2015-04-30T19:19:05.228+0800: 8.682: [CMS-concurrent-sweep: 0.004/0.004 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
+2015-04-30T19:19:05.228+0800: 8.682: [CMS-concurrent-reset-start]
+2015-04-30T19:19:05.230+0800: 8.684: [CMS-concurrent-reset: 0.002/0.002 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
+Heap
+ par new generation   total 306688K, used 171307K [0x00000007bae00000, 0x00000007cfac0000, 0x00000007cfac0000)
+  eden space 272640K,  58% used [0x00000007bae00000, 0x00000007c4af10c0, 0x00000007cb840000)
+  from space 34048K,  31% used [0x00000007cd980000, 0x00000007ce3d9ef0, 0x00000007cfac0000)
+  to   space 34048K,   0% used [0x00000007cb840000, 0x00000007cb840000, 0x00000007cd980000)
+ concurrent mark-sweep generation total 707840K, used 0K [0x00000007cfac0000, 0x00000007fae00000, 0x00000007fae00000)
+ concurrent-mark-sweep perm gen total 32752K, used 21355K [0x00000007fae00000, 0x00000007fcdfc000, 0x0000000800000000)

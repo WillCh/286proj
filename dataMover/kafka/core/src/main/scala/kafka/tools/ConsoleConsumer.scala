@@ -30,7 +30,7 @@ import kafka.metrics.KafkaMetricsReporter
 import kafka.consumer.{Blacklist,Whitelist,ConsumerConfig,Consumer}
 import scala.util.parsing.json._
 import scala.collection.immutable.Map
-import scala.sys.process._
+import sys.process._
 /**
  * Consumer that dumps messages out to standard out.
  *
@@ -252,7 +252,10 @@ class DefaultMessageFormatter extends MessageFormatter {
     // then call the API here
     // println(content("name"))
     //var cmd = "echo " + content("username") + " " + " > /Users/jialianggu/courses/cs286/286Project/kafka/sandbox/contents" 
-    var cmd = Seq("bash","-c","echo", content("username"))!! 
+    Seq("bash", "-c", "echo `date` > test.txt")!!
+    //"echo data".!
+    val s:String = "echo data"
+    s.!
     //Runtime.getRuntime().exec(cmd)
     // end of my changes
     
