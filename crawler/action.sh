@@ -29,7 +29,8 @@ then
     echo "creating tar archive for ${dir_path}"
     tar -czf "${1}/../output-tarballs/${output_dir}.tar.gz" -C ${dir_path} .
     echo "transferring to ${2}"
-    #scp ${1}.tar.gz ${2}
+    echo "${1}/../output-tarballs/${output_dir}.tar.gz"
+    scp -i ~/ec2.pem "${1}/../output-tarballs/${output_dir}.tar.gz" ${2}
   fi
 fi
 # else ignore
