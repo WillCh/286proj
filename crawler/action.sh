@@ -30,7 +30,7 @@ then
     tar -czf "${1}/../output-tarballs/${output_dir}.tar.gz" -C ${dir_path} .
     echo "transferring to ${2}"
     echo "${1}/../output-tarballs/${output_dir}.tar.gz"
-    scp -i ~/ec2.pem "${1}/../output-tarballs/${output_dir}.tar.gz" ${2}
+    scp -i ec2.pem "${1}/../output-tarballs/${output_dir}.tar.gz" ${2}
   fi
 fi
 # else ignore
