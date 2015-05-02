@@ -8,5 +8,8 @@
 
 inotifywait -m "kafka/incoming" --format '%w%f' -e create |
   while read file; do
-    ./action.sh $file
+    if [[ $file == *".tar.gz" ]]
+    then
+        ./action.sh $file
+    fi
   done
